@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 
-const ButtonGroup = () => {
-  const [selectedButton, setSelectedButton] = useState(null);
+const ButtonGroup = ({ selectedNumber, setSelectedNumber }) => {
+  
 
   const handleButtonClick = (index) => {
     // Toggle selection: if the button is already selected, unselect it
-    if (selectedButton === index) {
-      setSelectedButton(null); // Unselect the button
+    if (selectedNumber === index + 1) {
+      setSelectedNumber(null); // Unselect the button
     } else {
-      setSelectedButton(index); // Select the button
+      setSelectedNumber(index + 1); // Select the button
     }
   };
 
@@ -19,7 +19,7 @@ const ButtonGroup = () => {
           <button
             key={index}
             className={`w-[72px] h-[72px] font-extrabold border-2 text-[24px] rounded-lg transition-all duration-500 transform ${
-              selectedButton === index
+              selectedNumber === index + 1
                 ? "bg-black text-white border-white scale-110 rounded-2xl shadow-lg"
                 : "bg-white text-black border-black hover:scale-105 hover:shadow-md"
             }`}
