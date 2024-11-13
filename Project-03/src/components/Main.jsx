@@ -3,6 +3,7 @@ import RollDice from "./RollDice";
 import Score from "./Score";
 import SelectNumbers from "./SelectNumbers";
 import Modal from "./Modal"; // Import the custom modal component
+import Rules from "./Rules"; // Import the Rules component
 
 const Gameplay = () => {
   const [selectedNumber, setSelectedNumber] = useState(null);
@@ -80,6 +81,7 @@ const Gameplay = () => {
       {modalVisible && (
         <Modal message={modalMessage} onClose={handleCloseModal} /> // Display the animated modal
       )}
+      <Rules /> {/* Add Rules component here to display the game rules */}
     </>
   );
 };
